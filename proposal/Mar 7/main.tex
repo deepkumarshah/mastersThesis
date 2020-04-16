@@ -17,6 +17,9 @@
 \usepackage{datetime}
 \usepackage{courier}
 \usepackage{array}
+%\usepackage{svg}
+%\usepackage{amsmath}
+%\usepackage[pdftex]{graphicx}
 
 \title{Machine Learning in Terpenes' Classification}
 \date{February 28, 2020}
@@ -110,6 +113,16 @@ m/z ratio on the x-axis and \gls{rel abund} on the y-axis. This graph is known a
 
 In the example provided in Figure \ref{fig:vyn}, 27 is the base peak which has a \gls{rel abund} of 100\%. 62 is the parent peak a.k.a. M\textsuperscript{+} or mass of a compound. For isotopes, it can be M+1 or M+2.
 
+\subsection{Artificial Neural Networks}
+Artificial Neural Networks (ANNs) are one of the most integral part in the foundation of Machine Learning (ML). ANNs are designed following the same principle as the human nervous system. Neurons, the most fundamental part of the human nervous system are connected to other neurons to  perform day-to-day human tasks such as talking and walking. \begin{figure}[!ht]
+\centering
+    \begin{center}
+        \includegraphics[width = 13.5 cm]{Artificial-Neuron.png}
+    \end{center}
+    \caption{ANN architecture}
+    \label{fig:Architecture of an ANN}
+\end{figure} \textbf{In a similar fashion, ANNs are made up of simple nodes or neurons connected by weights $w$ as shown in fig. \ref{fig:Architecture of an ANN}. An activation function $f$ determines the output $y$ computing the sum of products of the weights and its input node values. A threshold or bias, $b$ with weight $w_{b}$, is  used to restrict the activation of a neuron. The output $y$ of a neuron should be equal to the target value $t$. If it does not, the weights are adjusted as $$y = f (bw_{b} + \sum\limits_{1} x_{i}w_{j})$$ where $w_{ij}$ = value of connection weight from unit $i$ to unit in layer $j$, $x_{i}$} = value of input from unit in layer $i$ to unit in layer $j$, $\eta$ = learning rate, $\Delta w_{ij}$ = value of the weight update for connection weight from unit layer $i$ to unit in layer $j$, $\delta_{j}$ = the derivative of error at unit $j$ with respect to weight $w_{ij}$. $$w_{ij} = w_{ij} + \Delta w_{ij}$$ $$\Delta w_{ij} = \eta\delta_{j}x_{i}$$
+
 \subsection{Machine Learning Applications for Mass Spectrometer}
 Mass spectrometer is a tool which measures mass-to-charge ratio of a compound, mixture or an isotope. Deep convolutional neural networks (CNN) are used for tumor classification. An adapted CNN architecture was designed for mass spectra, as it is different from RGB images. It classifies the imaging mass spectrometry data.
 
@@ -154,7 +167,7 @@ The end goal is to generate a regression model that will accept a sample and out
 \gls{PCA} is one of many techniques used to reduce the dimensions of inputs. The inputs are combined in a specific manner such that the least important variables can be dropped while retaining the most important variables. The simplest way to achieve the PCA algorithm is by plotting all the dimensions or variables and then finding the direction with the largest variance. \begin{figure}[!ht]
 \centering
     \begin{center}
-        \includegraphics[width = 14.4 cm]{howPCAworks.png}
+        \includegraphics[width = 13.5 cm]{howPCAworks.png}
     \end{center}
     \caption{Working of PCA}
     \label{fig:howPCAWorks}
@@ -175,6 +188,17 @@ The problem has 320 dimensions and 50,388 samples. It is difficult to visualise 
 
 %\gls{PCA} reduces 320 dimensions to 2 dimensions and plots 50,388 samples to visualise how distinct these samples are. The variance of the dimensions help us to understand the performance of data in prediction. It is difficult to visualise all the 320 dimensions in a plot, because it's impossible to draw a plot with 320 axes or dimensions. So, the 320 dimensions are reduced to 2 dimensions which only shows the variance of the 320 dimensions. The final two dimensions are orthogonal to each other showing the most and the second-most variance of the data.
 
+\subsection{Artificial Neural Networks}
+
+\begin{figure}[!ht]
+\centering
+    \begin{center}
+        \includegraphics[width = 11.7 cm]{NN.pdf}
+    \end{center}
+    \caption{Artificial Neural Networks Architecture}
+    \label{fig:Architecture}
+\end{figure}
+
 \section{Results}
 The mean absolute error with default parameters on the dataset of 4 terpenes was 0.2581. The accuracy achieved by the SVM algorithm \cite{Cortes1995} on this dataset is 91.4345\%. In the results shown in fig. \ref{fig:confMat}.
 In the confusion matrix, a, b, c, and d are myrcene, $\alpha$-pinene, THC and CBD respectively.
@@ -190,7 +214,6 @@ In the confusion matrix, a, b, c, and d are myrcene, $\alpha$-pinene, THC and CB
 
 \section{Conclusions}
 The empirical study shows that the accuracy for 10-fold cross-validation approach is 91.43\% for the classification of four terpenes. These are the initial results which supports that the machine learning has great potential to be used in the classification of terpenes. In future work, we anticipate experimenting with deep neural networks models to compare the SVM algorithm \cite{Cortes1995} and determine the best algorithm to find the proportions of terpenes present in real-world samples.
-
 
 \newpage
 %\section{References}
@@ -309,6 +332,7 @@ The problem has 320 dimensions and 50,388 samples. It is difficult to visualise 
 \section{Results}
 
 \section{Conclusions}
+
 
 \newpage
 %\section{References}
